@@ -146,7 +146,7 @@ if page == "Activity Rings":
 
     metric_cols = st.columns(4)
     with metric_cols[0]:
-        st.metric("Daily Activity Ring Close/Monthly Target", f"{(data[['stand','move','exercise']] >= 100).all(axis=1).sum()}/8")
+        st.metric("Daily Activity Ring Close/Monthly Target", f"{(data[['stand','move','exercise']] >= 100).all(axis=1).sum()}/10")
     with metric_cols[1]:
         st.metric("Daily Move Target/Monthly Average", f"450/{round(sum(move_data['total'])*0.25/len(move_data),0)}")
     with metric_cols[2]:
