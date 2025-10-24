@@ -37,7 +37,7 @@ con = init_duckdb()
 # Load data from S3
 @st.cache_data
 def load_data():
-    source_prefix = "s3://sumant28-testbucket/output/dt=*/*.parquet"
+    source_prefix = "s3://sumant28-testbucket/output/dt=2025-10-*/*.parquet"
     query = f"SELECT * FROM '{source_prefix}'"
     df_raw = con.execute(query).fetchdf()
     return df_raw
